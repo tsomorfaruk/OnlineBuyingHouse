@@ -15,6 +15,14 @@ Route::get('/', 'FrontEnd\WellcomeController@index');
 Route::get('/about-us', 'FrontEnd\WellcomeController@aboutUs');
 /*FrontEnd controller end*/
 
+/*Buyer controller start*/
+
+Route::get('/buyer/register','Buyer\BuyerController@register');
+Route::post('/buyer/store','Buyer\BuyerController@store');
+Route::get('/buyer/login','Buyer\BuyerController@login');
+Route::get('/buyer/dashboard','Buyer\BuyerController@index');
+
+/*Buyer controller end*/
 
 
 /*Admin Controller start*/

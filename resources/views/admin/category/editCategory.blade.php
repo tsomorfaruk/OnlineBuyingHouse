@@ -28,7 +28,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="" form-group>
+                    <div class="form-group" >
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" name="btn" class="btn btn-success btn-block">Update Category Info</button>
                         </div>
