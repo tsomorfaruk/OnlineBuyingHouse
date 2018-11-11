@@ -39,14 +39,14 @@
 </head>
 <body>
 <!-- Header -->
-@include('frontEnd.includes.header')
+@include('buyer.includes.header')
 <!-- Header End -->
 <!-- Content -->
 @yield('mainContent')
 <!-- Content End -->
 
 <!-- Footer -->
-@include('frontEnd.includes.footer')
+@include('buyer.includes.footer')
 <!-- Footer End -->
 
 <!-- JavaScripts -->

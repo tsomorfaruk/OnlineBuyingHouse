@@ -22,7 +22,7 @@
                 </ul>
             </div>
             <div class="f-center">
-                <h2>why choose us ?</h2>
+                <h2>why choose us ?{{ $buyerbyemail->email }} {{ $buyerbyemail->name }}</h2>
                 <div class="head-info">
                     Magna in pulvinar tempor montes pulvinar habitasse parturient? Elementum facilisis sit et, dolor placerat, turpis auctor. Lundium ultricies augue urna arcu aliquet velit?
                 </div>

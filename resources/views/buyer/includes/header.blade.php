@@ -19,7 +19,7 @@
                         <li><a href="{{url('/about-us')}}">ABOUT US</a></li>
                         <li><a href="{{url('/about-us')}}" title="">HOW IT WORKS</a></li>
                         <li><a href="{{url('/service')}}" title="">SERVICE</a></li>
-                        <li><a href="#" title=""><span>LOGIN/ REGISTRATION</span></a>
+                        <li><a href="#" title=""><span>{{ $buyerbyemail->name }}</span></a>
                             <ul> <!-- Submenu -->
                                 <li><a href="{{url('/buyer/login')}}" title="">Buyer Login</a></li>
                                 <li><a href="{{url('/gowner/login')}}" title="">Garment Owner Login</a></li>
