@@ -19,8 +19,11 @@ Route::get('/about-us', 'FrontEnd\WellcomeController@aboutUs');
 
 Route::get('/buyer/register','Buyer\BuyerController@register');
 Route::post('/buyer/store','Buyer\BuyerController@store');
-Route::get('/buyer/login','Buyer\BuyerController@login');
+Route::get('/buyer/login','Buyer\BuyerController@showLoginForm');
+Route::post('/buyer/login','Buyer\BuyerController@login');
+Route::get('/buyer/logout','Buyer\BuyerController@logout');
 Route::get('/buyer/dashboard','Buyer\BuyerController@index');
+Route::get('/buyer/post-job','Buyer\BuyerController@postJob');
 
 /*Buyer controller end*/
 

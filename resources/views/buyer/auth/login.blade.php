@@ -115,47 +115,43 @@
     <div class="row">
         <div class="Absolute-Center is-Responsive">
             <div class="col-sm-12 col-md-10 col-md-offset-1">
-                <form role="form" method="POST" action="{{ url('/buyer/login') }}">
-                    {{ csrf_field() }}
-                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                {!! Form::open(['role'=>'form','method'=>'POST', 'url'=>'/buyer/login', 'name'=>'loginForm']) !!}
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                        <div class="col-md-6">
-                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"
-                                   autofocus>
+                    <div class="col-md-6">
+                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" >
 
-                            @if ($errors->has('email'))
-                                <span class="help-block">
+                        @if ($errors->has('email'))
+                            <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                            @endif
-                        </div>
+                        @endif
                     </div>
-                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                        <label for="password" class="col-md-4 control-label">Password</label>
+                </div>
 
-                        <div class="col-md-6">
-                            <input id="password" type="password" class="form-control" name="password">
+                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <label for="password" class="col-md-4 control-label">Password</label>
 
-                            @if ($errors->has('password'))
-                                <span class="help-block">
+                    <div class="col-md-6">
+                        <input id="password" type="password" class="form-control" name="password">
+                        @if ($errors->has('password'))
+                            <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                            @endif
-                        </div>
+                        @endif
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-8 col-md-offset-4">
-                            <button type="submit" class="btn btn-primary">
-                                Login
-                            </button>
+                </div>
 
-                            <a class="btn btn-link" href="{{ url('/buyer/password/reset') }}">
-                                Forgot Your Password?
-                            </a>
-                        </div>
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-4">
+                        <button type="submit" class="btn btn-primary" >
+                            Register
+                        </button>
                     </div>
-                </form>
+                    <h4 class="text-error">{{Session::get('message')}}</h4>
+                </div>
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
