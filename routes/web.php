@@ -32,6 +32,16 @@ Route::get('/buyer/post/delete/{id}','Buyer\PostController@deletePost');
 
 /*Buyer controller end*/
 
+/*Gowner Controller start*/
+Route::get('/gowner/register','Gowner\GownerController@register');
+Route::post('/gowner/store','Gowner\GownerController@store');
+Route::get('/gowner/login','Gowner\GownerController@showLoginForm');
+Route::post('/gowner/login','Gowner\GownerController@login');
+Route::get('/gowner/logout','Gowner\GownerController@logout');
+Route::get('/gowner/dashboard','Gowner\GownerController@index');
+
+/*Gowner Controller Ens*/
+
 
 /*Admin Controller start*/
 Auth::routes();
