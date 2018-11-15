@@ -23,7 +23,8 @@ Route::get('/buyer/login','Buyer\BuyerController@showLoginForm');
 Route::post('/buyer/login','Buyer\BuyerController@login');
 Route::get('/buyer/logout','Buyer\BuyerController@logout');
 Route::get('/buyer/dashboard','Buyer\BuyerController@index');
-Route::get('/buyer/post-job','Buyer\BuyerController@postJob');
+Route::get('/buyer/post-job','Buyer\PostController@createPost');
+Route::post('/buyer/post/save','Buyer\PostController@savePost');
 
 /*Buyer controller end*/
 

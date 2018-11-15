@@ -1023,7 +1023,7 @@ table a:hover{
     padding-top:12px;
   }   
   
-  .form-comment input, .form-comment textarea {
+  .form-comment input, .form-comment select, .form-comment option, .form-comment textarea {
     width:93.4%;
     color:#fff;
     background:#fb8865;

@@ -68,13 +68,14 @@ class BuyerController extends Controller
         $email = $request->email;
         $password = $request->password;
         $buyer = Buyer::where('email', $email)->first();
-        $buyerEmail = $buyer->email;
-        Session::put('buyerEmail', $buyerEmail);
+
         if ($buyer) {
             if (!Hash::check($password, $buyer->password)) {
+
                 return redirect('/buyer/login')->with('message', 'Not Login. Your password is wrong.');
             } else {
-
+                $buyerEmail = $buyer->email;
+                Session::put('buyerEmail', $buyerEmail);
                 return redirect('/buyer/dashboard');
             }
         } else {
@@ -89,15 +90,4 @@ class BuyerController extends Controller
         return redirect('/');
     }
 
-    public function postJob()
-    {
-        if (Session::get('buyerEmail')) {
-            $buyerEmail = Session::get('buyerEmail');
-            $buyerbyEmail = Buyer::where('email', $buyerEmail)->first();
-            return view('buyer.posts.post', ['buyerbyemail' => $buyerbyEmail]);
-        } else {
-            return redirect('/buyer/login');
-        }
-
-    }
 }

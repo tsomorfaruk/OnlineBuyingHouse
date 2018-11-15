@@ -2,9 +2,9 @@
 
 namespace App\Http\Middleware;
 
-use App\Session\Session;
+
 use Closure;
-use app\Http\Controllers\BuyerController;
+use Illuminate\Support\Facades\Session;
 class BuyerMiddleware
 {
     /**
@@ -22,7 +22,7 @@ class BuyerMiddleware
         }
         else
         {
-            return redirect('/login');
+            return redirect('/buyer/login');
         }
         //return $next($request);
     }
