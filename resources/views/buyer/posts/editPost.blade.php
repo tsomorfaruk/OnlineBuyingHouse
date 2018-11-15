@@ -1,6 +1,6 @@
 @extends('buyer.master')
 @section('title')
-    Post a Job - Buyer
+    Edit Job Post - Buyer
 @endsection
 @section('mainContent')
     <section id="titlebar">
@@ -8,7 +8,7 @@
         <div class="container">
 
             <div class="eight columns">
-                <h3 class="left">Post Jobs</h3>
+                <h3 class="left">Edit Job Post</h3>
             </div>
 
             <div class="eight columns">
@@ -16,7 +16,8 @@
                     <ul>
                         <li>You are here:</li>
                         <li><a href="{{url('/buyer/dashboard')}}">Home</a></li>
-                        <li>Post Jobs</li>
+                        <li><a href="{{url('/buyer/post/manage')}}">Manage Job Post</a></li>
+                        <li>Edit Job Post</li>
                     </ul>
                 </nav>
             </div>
@@ -38,28 +39,28 @@
                             <div class="row space20"></div>
 
                             <!-- Blog Form -->
-                            {!! Form::open(['class'=>'form-comment','role'=>'form','method'=>'POST', 'url'=>'/buyer/post/save', 'name'=>'createPostForm']) !!}
+                            {!! Form::open(['class'=>'form-comment','role'=>'form','method'=>'POST', 'url'=>'/buyer/post/update', 'name'=>'updatePostForm']) !!}
                             <div class="row">
                                 <div class="span8">
                                     Post Title*<br>
-                                    <input type="text" name="postTitle" required><br>
+                                    <input type="text" name="postTitle" value="{{$postbyid->postTitle}}" required><br>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="span8">
                                     Post Description *<br>
-                                    <textarea type="text" name="postDescription"></textarea>
+                                    <textarea type="text" name="postDescription" required>{{$postbyid->postDescription}}</textarea>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="span4">
                                     Est. Budget *<br>
-                                    <input type="number" name="postBudget" required><br>
+                                    <input type="number" name="postBudget" value="{{$postbyid->postBudget}}" required><br>
                                 </div>
                                 <div class="span4">
                                     Select Category *<br>
                                     <select name="categoryId">
-                                        <option>Select Category Name</option>
+                                        <option value="{{$postbyid->categoryId}}">Select Category Name</option>
                                         @foreach($categories as $category)
                                             <option value="{{$category->id}}">{{$category->categoryName}}</option>
                                         @endforeach
@@ -70,18 +71,19 @@
                                 <div class="span4">
                                     Job Tipe *<br>
                                     <select name="jobType">
-                                        <option>Select Job Tipe</option>
-                                            <option value="Entry Level">Entry Level</option>
-                                            <option value="Intermediate">Intermediate</option>
-                                            <option value="Advance">Advance</option>
+                                        <option>{{$postbyid->jobType}}</option>
+                                        <option value="Entry Level">Entry Level</option>
+                                        <option value="Intermediate">Intermediate</option>
+                                        <option value="Advance">Advance</option>
                                     </select><br>
                                 </div>
                             </div>
                             <div class="row space20"></div>
                             <input type="hidden" name="buyerId" value="{{$buyerbyemail->id}}">
+                            <input type="hidden" name="postId" value="{{$postbyid->id}}">
                             <div class="row">
                                 <div class="span4">
-                                    <button type="submit" class="btn f-right"> Save Post</button>
+                                    <button type="submit" class="btn f-right"> Update Post</button>
                                 </div>
                             </div>
                         {!! Form::close() !!}

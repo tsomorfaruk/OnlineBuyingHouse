@@ -25,6 +25,10 @@ Route::get('/buyer/logout','Buyer\BuyerController@logout');
 Route::get('/buyer/dashboard','Buyer\BuyerController@index');
 Route::get('/buyer/post-job','Buyer\PostController@createPost');
 Route::post('/buyer/post/save','Buyer\PostController@savePost');
+Route::get('/buyer/post/manage','Buyer\PostController@managePost');
+Route::get('/buyer/post/edit/{id}','Buyer\PostController@editPost');
+Route::post('/buyer/post/update','Buyer\PostController@updatePost');
+Route::get('/buyer/post/delete/{id}','Buyer\PostController@deletePost');
 
 /*Buyer controller end*/
 
