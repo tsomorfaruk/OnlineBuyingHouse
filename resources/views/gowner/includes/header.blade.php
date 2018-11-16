@@ -19,7 +19,7 @@
                         <li><a href="{{url('/buyer/post-job')}}">JOB POST</a></li>
                         <li><a href="{{url('/buyer/post/manage')}}" title="">MANAGE JOB POSTS</a></li>
                         <li><a href="{{url('/service')}}" title="">SERVICE</a></li>
-                        <li><a href="#" title=""><span>{{ $buyerbyemail->name }}</span></a>
+                        <li><a href="#" title=""><span>{{ $gownerbyemail->name }}</span></a>
                             <ul> <!-- Submenu -->
                                 <li><a href="{{url('/buyer/logout')}}" title="">Logout</a></li>
                             </ul> <!-- End Submenu -->
