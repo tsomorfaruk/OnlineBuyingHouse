@@ -70,7 +70,7 @@
                                 <div class="span4">
                                     Job Tipe *<br>
                                     <select name="jobType">
-                                        <option>Select Job Tipe</option>
+                                        <option>Select Job Type</option>
                                             <option value="Entry Level">Entry Level</option>
                                             <option value="Intermediate">Intermediate</option>
                                             <option value="Advance">Advance</option>

@@ -107,8 +107,8 @@
                         <li><a href="{{ url('/') }}">Home</a></li>
                         <li><a href="{{ url('/about-us') }}">About Us</a></li>
                         <li><a href="{{ url('/about-us') }}">Service</a></li>
-                        <li><a href="{{ url('/buyer/login') }}">Login</a></li>
-                        <li><a href="{{ url('/buyer/register') }}">Register</a></li>
+                        <li><a href="{{ url('/gowner/login') }}">Login</a></li>
+                        <li><a href="{{ url('/gowner/register') }}">Register</a></li>
                     </ul>
                 </nav>
             </div>

@@ -19,7 +19,7 @@ class CreateGownersTable extends Migration
             $table->string('email',100)->unique();
             $table->string('password');
             $table->text('overview')->nullable();
-            $table->string('workRate')->nullable();
+            $table->string('ratingPoint')->nullable();
             $table->string('imagePath')->nullable();
             $table->string('portfolio')->nullable();
             $table->integer('categoryId')->nullable();
@@ -29,6 +29,7 @@ class CreateGownersTable extends Migration
             $table->string('phone');
             $table->string('address')->nullable();
             $table->string('country')->nullable();
+            $table->string('workQuality')->nullable();
             $table->string('activationStatus');
             $table->timestamps();
             $table->softDeletes();

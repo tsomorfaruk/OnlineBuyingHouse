@@ -3,174 +3,96 @@
     Garment Owner Dashboard
 @endsection
 @section('mainContent')
+
+    <section id="titlebar">
+        <!-- Container -->
+        <div class="container">
+
+            <div class="eight columns">
+                <h3 class="left">My Job Feed</h3>
+            </div>
+
+            <div class="eight columns">
+                <nav id="breadcrumbs">
+                    <ul>
+                        <li>You are here:</li>
+                        <li><a href="#">Dashboard</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+        <!-- Container / End -->
+    </section>
     <div id="content">
         <div class="container">
-            <div class="slider1 flexslider">  <!-- Slider -->
-                <ul class="slides">
-                    <li>
-                        <img src="{{URL::asset('frontEnd/img')}}/slider/1.jpg" alt="">
-                    </li>
-                    <li>
-                        <img src="{{URL::asset('frontEnd/img')}}/slider/2.jpg" alt="">
-                    </li>
-                    <li>
-                        <img src="{{URL::asset('frontEnd/img')}}/slider/3.jpg" alt="">
-                    </li>
-                    <li>
-                        <img src="{{URL::asset('frontEnd/img')}}/slider/4.jpg" alt="">
-                    </li>
-                </ul>
-            </div>
-            <div class="f-center">
-                <h2>why choose us ?{{ $gownerbyemail->email }} {{ $gownerbyemail->name }}</h2>
-                <div class="head-info">
-                    Magna in pulvinar tempor montes pulvinar habitasse parturient? Elementum facilisis sit et, dolor placerat, turpis auctor. Lundium ultricies augue urna arcu aliquet velit?
-                </div>
-            </div>
-            <div class="f-hr"></div>
-            <div class="row space40"></div>
             <div class="row">
                 <div class="span12">
+                    <h3>&nbsp;</h3>
+                </div>
+                <div class="span3">
+
+                    <h3 class="p-t-0">Search</h3>
+                    <div class="search-box">
+                        <a href="#" class="search-icon"><i class="icon-search"></i></a>
+                        <input class="search" name="" value="Search">
+                    </div>
+
+                    <h3>My Categories</h3>
+                    <ul class="list-c">
+                        <li><i class="icon-chevron-right"></i><a href="#">Business Plan</a></li>
+                        <li><i class="icon-chevron-right"></i><a href="#">Entertainment</a></li>
+                        <li><i class="icon-chevron-right"></i><a href="#">News & Politics</a></li>
+                        <li><i class="icon-chevron-right"></i><a href="#">Social Media Networks</a></li>
+                        <li><i class="icon-chevron-right"></i><a href="#">Technology & Innovation</a></li>
+                    </ul>
+                    <div class="row space50"></div>
+                </div>
+                <div class="span9">
+                    <!-- Blog Item -->
                     <div class="row">
-                        <!-- Service Container -->
-                        <div class="span4">
-                            <!-- Service Icon -->
-                            <div class="ic-1"><i class="icon-lightbulb"></i></div>
-                            <!-- Service Title -->
-                            <div class="title-1"><h4>Powerful clean design</h4></div>
-                            <!-- Service Content -->
-                            <div class="text-1">
-                                On sait depuis longake apple pie. Gingerbread cotton candy icing ice cream applicake wafetemps nnaire de plus de 200 mots pluskan rlatin
+                        @foreach($posts as $post)
+                        <div class="span8">
+                            <div class="row">
+                                <div class="span8 post-d-info">
+                                    <a href="blog-detail.htm"><h3>{{$post->postTitle}}</h3></a>
+                                    <div class="blue-dark">
+                                        <i class="icon-user"></i> {{$post->jobType}} <i class="icon-tag"></i> Est. Budger {{$post->postBudget}}$ <i class="icon-comment-alt"></i>Category: {{$post->categoryName}}
+                                    </div>
+                                    <p>{{$post->postDescription}}</p>
+                                </div>
+
                             </div>
                         </div>
-                        <!-- Service Container End -->
-                        <div class="span4">
-                            <div class="ic-1"><i class="icon-resize-small"></i></div>
-                            <div class="title-1"><h4>Fully responsive</h4></div>
-                            <div class="text-1">
-                                Iil utilise un dictionnaire de plus de 200 mots kan rlarem as Ipsumtiotins, en combiake apple pie. Gingerbread icing ice cream applicake wafenaison.
-                            </div>
-                        </div>
-                        <div class="span4">
-                            <div class="ic-1"><i class="icon-eye-open"></i></div>
-                            <div class="title-1"><h4>Retina Ready</h4></div>
-                            <div class="text-1">
-                                Contrairement à une opinion répandue, Lorem as Ipsumtionnaire de plus n'est pas simplake apple pie. Gingerbread cotton  ice cream applicake wafeement.
-                            </div>
+                            @endforeach
+                    </div>
+                    <!-- Blog Item End -->
+
+                    <div class="row space40"></div>
+
+                    <!-- Blog Item End -->
+
+                    <div class="row space30"></div>
+
+                    <!-- Paging -->
+                    <div class="row">
+                        <div class="span9">
+                            <a href="#" class="paging">&#62;</a>
+                            <a href="#" class="paging">84</a>
+                            <a href="#" class="paging">83</a>
+                            <a href="#" class="paging">82</a>
+                            <a href="#" class="paging">...</a>
+                            <a href="#" class="paging">3</a>
+                            <a href="#" class="paging">2</a>
+                            <a href="#" class="paging">1</a>
+                            <a href="#" class="paging">&#60;</a>
                         </div>
                     </div>
+                    <!-- Paging End -->
+                    <div class="row space40"></div>
                 </div>
-
-                <div class="span12">
-                    <h2>We have provide best consulting service</h2>
-                </div>
-                <div class="span8">
-                    <img src="{{URL::asset('frontEnd/img')}}/image01.png" alt="">
-                </div>
-                <div class="span4">
-                    <div class="ic-1"></div>
-                    <div class="title-1"><h4>Our Service:</h4></div>
-                    <!-- List -->
-                    <div class="text-1">
-                        <ul class="list-b">
-                            <!-- List Items -->
-                            <li><i class="icon-ok"></i> Tax Consulting.</li>
-                            <li><i class="icon-ok"></i> Business Consulting.</li>
-                            <li><i class="icon-ok"></i> Data analysis methods.</li>
-                            <li><i class="icon-ok"></i> On demand consulting.</li>
-                            <li><i class="icon-ok"></i> Private consultant.</li>
-                        </ul>
-                    </div>
-                    <!-- List End -->
-                </div>
-
+                <!-- Side Bar -->
             </div>
-
-            <div class="space40"></div>
-
-            <!-- Our Clients -->
-            <div class="row">
-                <div class="span12">
-                    <h3>Our Clients</h3>
-                </div>
-            </div>
-
-            <div id="our-clients" class="slider2 flexslider">
-                <ul class="slides">
-                    <li>
-                        <div class="row">
-                            <div class="span2">
-                                <a href="#" rel="external">
-                                    <img src="{{URL::asset('frontEnd/img')}}/our-clients/1.png" alt="">
-                                </a>
-                            </div>
-                            <div class="span2">
-                                <a href="#" rel="external">
-                                    <img src="{{URL::asset('frontEnd/img')}}/our-clients/2.png" alt="">
-                                </a>
-                            </div>
-                            <div class="span2">
-                                <a href="#" rel="external">
-                                    <img src="{{URL::asset('frontEnd/img')}}/our-clients/3.png" alt="">
-                                </a>
-                            </div>
-                            <div class="span2">
-                                <a href="#" rel="external">
-                                    <img src="{{URL::asset('frontEnd/img')}}/our-clients/4.png" alt="">
-                                </a>
-                            </div>
-                            <div class="span2">
-                                <a href="#" rel="external">
-                                    <img src="{{URL::asset('frontEnd/img')}}/our-clients/5.png" alt="">
-                                </a>
-                            </div>
-                            <div class="span2">
-                                <a href="#" rel="external">
-                                    <img src="{{URL::asset('frontEnd/img')}}/our-clients/6.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="span2">
-                                <a href="#" rel="external">
-                                    <img src="{{URL::asset('frontEnd/img')}}/our-clients/4.png" alt="">
-                                </a>
-                            </div>
-                            <div class="span2">
-                                <a href="#" rel="external">
-                                    <img src="{{URL::asset('frontEnd/img')}}/our-clients/3.png" alt="">
-                                </a>
-                            </div>
-                            <div class="span2">
-                                <a href="#" rel="external">
-                                    <img src="{{URL::asset('frontEnd/img')}}/our-clients/1.png" alt="">
-                                </a>
-                            </div>
-                            <div class="span2">
-                                <a href="#" rel="external">
-                                    <img src="{{URL::asset('frontEnd/img')}}/our-clients/2.png" alt="">
-                                </a>
-                            </div>
-                            <div class="span2">
-                                <a href="#" rel="external">
-                                    <img src="{{URL::asset('frontEnd/img')}}/our-clients/5.png" alt="">
-                                </a>
-                            </div>
-                            <div class="span2">
-                                <a href="#" rel="external">
-                                    <img src="{{URL::asset('frontEnd/img')}}/our-clients/6.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <!-- Our Clients End -->
-
-            <div class="space50"></div>
-
         </div>
     </div>
 @endsection

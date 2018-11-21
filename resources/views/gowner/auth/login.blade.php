@@ -91,8 +91,8 @@
                         <li><a href="{{ url('/') }}">Home</a></li>
                         <li><a href="{{ url('/about-us') }}">About Us</a></li>
                         <li><a href="{{ url('/about-us') }}">Service</a></li>
-                        <li><a href="{{ url('/buyer/login') }}">Login</a></li>
-                        <li><a href="{{ url('/buyer/register') }}">Register</a></li>
+                        <li><a href="{{ url('/gowner/login') }}">Login</a></li>
+                        <li><a href="{{ url('/gowner/register') }}">Register</a></li>
                     </ul>
                 </nav>
             </div>
@@ -106,7 +106,7 @@
     <!-- Container -->
     <div class="container">
         <div class="eight columns">
-            <h3 class="left">Buyer Login</h3>
+            <h3 class="left">User Login</h3>
         </div>
     </div>
     <!-- Container / End -->
@@ -115,7 +115,7 @@
     <div class="row">
         <div class="Absolute-Center is-Responsive">
             <div class="col-sm-12 col-md-10 col-md-offset-1">
-                {!! Form::open(['role'=>'form','method'=>'POST', 'url'=>'/buyer/login', 'name'=>'loginForm']) !!}
+                {!! Form::open(['role'=>'form','method'=>'POST', 'url'=>'/gowner/login', 'name'=>'loginForm']) !!}
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 

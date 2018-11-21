@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Gowner;
+use App\Post;
+use App\Buyer;
+use DB;
 class GownerController extends Controller
 {
     public function register()
@@ -44,9 +47,49 @@ class GownerController extends Controller
         if (Session::get('gownerEmail')) {
             $gownerEmail = Session::get('gownerEmail');
             $gownerbyEmail = Gowner::where('email', $gownerEmail)->first();
-            return view('gowner.home.homeContent', ['gownerbyemail' => $gownerbyEmail]);
+            $posts = DB::table('posts')
+                ->join('categories', 'posts.categoryId', '=', 'categories.id')
+                ->select('posts.*','categories.categoryName')
+                ->where('posts.deleted_at', '=', NULL)
+                ->get();
+            return view('gowner.home.homeContent', ['posts'=>$posts, 'gownerbyemail' => $gownerbyEmail]);
         } else {
             return redirect('/gowner/login');
         }
+    }
+
+    public function showLoginForm()
+    {
+        if (Session::get('gownerEmail')) {
+            return redirect('/gowner/dashboard');
+        } else {
+            return view('gowner.auth.login');
+        }
+    }
+
+    public function login(Request $request)
+    {
+        $email = $request->email;
+        $password = $request->password;
+        $gowner = Gowner::where('email', $email)->first();
+
+        if ($gowner) {
+            if (!Hash::check($password, $gowner->password)) {
+
+                return redirect('/gowner/login')->with('message', 'Not Login. Your password is wrong.');
+            } else {
+                $gownerEmail = $gowner->email;
+                Session::put('gownerEmail', $gownerEmail);
+                return redirect('/gowner/dashboard');
+            }
+        } else {
+            return redirect('/gowner/login')->with('message', 'Not Login. Your Email is wrong.');
+        }
+    }
+
+    public function logout()
+    {
+        Session::flush();
+        return redirect('/');
     }
 }

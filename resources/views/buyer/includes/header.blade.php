@@ -15,7 +15,7 @@
                     <a href="#nav" title="Show navigation">Show navigation</a>
                     <a href="#" title="Hide navigation">Hide navigation</a>
                     <ul class="clearfix">
-                        <li class="active"><a href="{{url('/')}}" title="">HOME</a></li>
+                        <li class="active"><a href="{{url('/buyer/dashboard')}}" title="">HOME</a></li>
                         <li><a href="{{url('/buyer/post-job')}}">JOB POST</a></li>
                         <li><a href="{{url('/buyer/post/manage')}}" title="">MANAGE JOB POSTS</a></li>
                         <li><a href="{{url('/service')}}" title="">SERVICE</a></li>
