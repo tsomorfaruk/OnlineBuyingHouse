@@ -17,7 +17,7 @@
                     <ul class="clearfix">
                         <li class="active"><a href="{{url('/gowner/dashboard')}}" title="">HOME</a></li>
                         <li><a href="{{url('/gowner/my-profile')}}">My Profile</a></li>
-                        <li><a href="{{url('/buyer/post/manage')}}" title="">MANAGE JOB POSTS</a></li>
+                        <li><a href="{{url('/gowner/my-portfolio')}}" title="">Portfolio</a></li>
                         <li><a href="{{url('/service')}}" title="">SERVICE</a></li>
                         <li><a href="#" title=""><span>{{ $gownerbyemail->name }}</span></a>
                             <ul> <!-- Submenu -->

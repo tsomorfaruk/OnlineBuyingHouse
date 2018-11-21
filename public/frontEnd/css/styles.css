@@ -1031,7 +1031,18 @@ table a:hover{
     padding:8px 12px !important;
     border:0px;
     border-radius:0px;
-  }    
+  }
+  .viewprofile
+  {
+	  width:93.4%;
+	  color:#fff;
+	  background:#fb8865;
+	  margin-top:10px;
+	  padding:8px 12px !important;
+	  border:0px;
+	  border-radius:0px;
+	  font-weight: bold;
+  }
   
   .form-comment textarea {
     width:96.9%;  

@@ -39,8 +39,11 @@ Route::get('/gowner/login','Gowner\GownerController@showLoginForm');
 Route::post('/gowner/login','Gowner\GownerController@login');
 Route::get('/gowner/logout','Gowner\GownerController@logout');
 Route::get('/gowner/dashboard','Gowner\GownerController@index');
-Route::get('/gowner/my-profile','Gowner\ProfileController@createProfile');
+Route::get('/gowner/my-profile','Gowner\ProfileController@index');
+Route::get('/gowner/update-profile','Gowner\ProfileController@createProfile');
 Route::post('/gowner/profile/save','Gowner\ProfileController@storeProfile');
+Route::get('/gowner/my-portfolio','Gowner\ProfileController@portfolioProfile');
+Route::post('/gowner/profile/save-portfolio','Gowner\ProfileController@savePortfolio');
 
 /*Gowner Controller Ens*/
 

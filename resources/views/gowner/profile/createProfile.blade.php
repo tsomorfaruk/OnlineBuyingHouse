@@ -33,16 +33,16 @@
                 <div class="span12">
                 </div>
                 <div class="span3">
-
-
-                    <h3>Shortcut Link</h3>
+                    <div class="row space50"></div>
+                    <div class="row space50"></div>
+                    <h3>Profile Settings</h3>
                     <ul class="list-c">
-                        <li><i class="icon-chevron-right"></i><a href="{{url('/gowner/my-profile')}}">My Profile</a></li>
-                        <li><i class="icon-chevron-right"></i><a href="{{url('/gowner/my-portfolio')}}">Portfolio</a></li>
-                        <li><i class="icon-chevron-right"></i><a href="{{url('/gowner/my-certifications')}}">Certifications</a></li>
-                        <li><i class="icon-chevron-right"></i><a href="{{url('/gowner/activation-status')}}">Activation Status</a></li>
-                        <li><i class="icon-chevron-right"></i><a href="{{url('/gowner/update-password')}}">Update Password</a></li>
-                        <li><i class="icon-chevron-right"></i><a href="{{url('/gowner/logout')}}">Logout</a></li>
+                        <li><i class="icon-chevron-right"></i><a style="color: #fb8865; font-weight: bold" href="{{url('/gowner/my-profile')}}">My Profile</a></li>
+                        <li><i class="icon-chevron-right"></i><a style="color: #fb8865; font-weight: bold" href="{{url('/gowner/my-portfolio')}}">Portfolio</a></li>
+                        <li><i class="icon-chevron-right"></i><a style="color: #fb8865; font-weight: bold" href="{{url('/gowner/my-certifications')}}">Certifications</a></li>
+                        <li><i class="icon-chevron-right"></i><a style="color: #fb8865; font-weight: bold" href="{{url('/gowner/activation-status')}}">Activation Status</a></li>
+                        <li><i class="icon-chevron-right"></i><a style="color: #fb8865; font-weight: bold" href="{{url('/gowner/update-password')}}">Update Password</a></li>
+                        <li><i class="icon-chevron-right"></i><a style="color: #fb8865; font-weight: bold" href="{{url('/gowner/logout')}}">Logout</a></li>
                     </ul>
                     <div class="row space50"></div>
                 </div>
@@ -59,24 +59,24 @@
                         <div class="row">
                             <div class="span4">
                                 Email(Read only)<br>
-                                <input type="text" name="name" value="{{$gownerbyemail->email}}" required readonly><br>
+                                <input type="text" name="email" value="{{$gownerbyemail->email}}" required readonly><br>
                             </div>
                             <div class="span4">
                                 Phone *<br>
-                                <input type="text" name="name" value="{{$gownerbyemail->phone}}" required><br>
+                                <input type="text" name="phone" value="{{$gownerbyemail->phone}}" required><br>
                             </div>
                         </div>
                         <div class="row">
                             <div class="span8">
                                 Overview *<br>
-                                <textarea type="text" name="overview"></textarea>
+                                <textarea type="text" name="overview" required>{{$gownerbyemail->overview}}</textarea>
                             </div>
                         </div>
                         <div class="row">
                             <div class="span4">
                                 Country *<br>
                                 <select name="country" required>
-                                    <option>Select your Country</option>
+                                    <option value="{{$gownerbyemail->country}}">{{$gownerbyemail->country}}</option>
                                     <option value="Bangladesh">Bangladesh</option>
                                     <option value="Cambodia">Cambodia</option>
                                     <option value="China">China</option>
@@ -91,8 +91,8 @@
                             </div>
                             <div class="span4">
                                 Select Category *
-                                <select name="categoryId">
-                                    <option>Select Category Name</option>
+                                <select name="categoryId" required>
+                                    <option value="">Select Category Name</option>
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->categoryName}}</option>
                                     @endforeach
@@ -109,8 +109,8 @@
                         <div class="row">
                             <div class="span4">
                                 Work Quality *<br>
-                                <select name="workquality">
-                                    <option>Work Quality</option>
+                                <select name="workquality" required>
+                                    <option value="{{$gownerbyemail->workQuality}}">{{$gownerbyemail->workQuality}}</option>
                                     <option value="Low">Low</option>
                                     <option value="Medium">Medium</option>
                                     <option value="High">High</option>
